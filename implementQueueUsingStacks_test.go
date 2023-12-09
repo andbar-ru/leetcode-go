@@ -5,7 +5,7 @@ import (
 )
 
 func TestImplementQueueUsingStacks(t *testing.T) {
-	queue := Constructor()
+	queue := ConstructorTopRated()
 	queue.Push(1)
 	queue.Push(2)
 	x := queue.Peek()

@@ -79,3 +79,38 @@ func (this *MyQueue) Empty() bool {
 * param_3 := obj.Peek();
 * param_4 := obj.Empty();
  */
+
+// Reimplemention of the top rated solution
+
+type MyQueueTopRated struct {
+	stackPush, stackPop *Stack
+}
+
+func ConstructorTopRated() MyQueueTopRated {
+	return MyQueueTopRated{new(Stack), new(Stack)}
+}
+
+func (this *MyQueueTopRated) Push(x int) {
+	this.stackPush.Push(x)
+}
+
+func (this *MyQueueTopRated) Pop() int {
+	v := this.Peek()
+	_, _ = this.stackPop.Pop()
+	return v
+}
+
+func (this *MyQueueTopRated) Peek() int {
+	if this.stackPop.Size() == 0 {
+		for this.stackPush.Size() != 0 {
+			v, _ := this.stackPush.Pop()
+			this.stackPop.Push(v)
+		}
+	}
+	v, _ := this.stackPop.Peek()
+	return v
+}
+
+func (this *MyQueueTopRated) Empty() bool {
+	return this.stackPush.Size() == 0 && this.stackPop.Size() == 0
+}
