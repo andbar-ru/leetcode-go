@@ -13,19 +13,19 @@ func TestMergeTwoSortedLists(t *testing.T) {
 		expected *ListNode
 	}{
 		{
-			list1:    slice2List([]int{1, 2, 4}),
-			list2:    slice2List([]int{1, 3, 4}),
-			expected: slice2List([]int{1, 1, 2, 3, 4, 4}),
+			list1:    slice2list([]int{1, 2, 4}),
+			list2:    slice2list([]int{1, 3, 4}),
+			expected: slice2list([]int{1, 1, 2, 3, 4, 4}),
 		},
 		{
-			list1:    slice2List([]int{}),
-			list2:    slice2List([]int{}),
-			expected: slice2List([]int{}),
+			list1:    slice2list([]int{}),
+			list2:    slice2list([]int{}),
+			expected: slice2list([]int{}),
 		},
 		{
-			list1:    slice2List([]int{}),
-			list2:    slice2List([]int{0}),
-			expected: slice2List([]int{0}),
+			list1:    slice2list([]int{}),
+			list2:    slice2list([]int{0}),
+			expected: slice2list([]int{0}),
 		},
 	}
 
@@ -57,9 +57,9 @@ func TestMergeTwoSortedListsRand(t *testing.T) {
 				nums2 = append(nums2, n)
 			}
 		}
-		list := slice2List(nums)
-		list1 := slice2List(nums1)
-		list2 := slice2List(nums2)
+		list := slice2list(nums)
+		list1 := slice2list(nums1)
+		list2 := slice2list(nums2)
 		result := mergeTwoSortedLists(list1, list2)
 		if !listsEqual(result, list) {
 			t.Errorf("mergeTwoSortedLists(%s, %s) = %s, expected %s", list1, list2, result, list)

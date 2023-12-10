@@ -32,7 +32,7 @@ func (n *ListNode) String() string {
 	return s
 }
 
-func slice2List(slice []int) *ListNode {
+func slice2list(slice []int) *ListNode {
 	dummy := new(ListNode)
 	curNode := dummy
 
@@ -63,4 +63,20 @@ func slice2ListCycle(slice []int, pos int) *ListNode {
 	}
 
 	return dummy.Next
+}
+
+func list2slice(head *ListNode) []int {
+	var slice []int
+
+	if head == nil {
+		return slice
+	}
+
+	curNode := head
+	for curNode != nil {
+		slice = append(slice, curNode.Val)
+		curNode = curNode.Next
+	}
+
+	return slice
 }
