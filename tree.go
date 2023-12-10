@@ -9,10 +9,10 @@ type TreeNode struct {
 }
 
 func (n *TreeNode) String() string {
-	return fmt.Sprint(tree2Slice(n))
+	return fmt.Sprint(tree2slice(n))
 }
 
-func slice2Tree(slice []*Int) *TreeNode {
+func slice2tree(slice []*Int) *TreeNode {
 	var insertLevelOrder func([]*Int, int) *TreeNode
 	insertLevelOrder = func(slice []*Int, i int) *TreeNode {
 		if i >= len(slice) || slice[i] == nil {
@@ -31,7 +31,7 @@ func slice2Tree(slice []*Int) *TreeNode {
 	return insertLevelOrder(slice, 0)
 }
 
-func tree2Slice(root *TreeNode) []*Int {
+func tree2slice(root *TreeNode) []*Int {
 	if root == nil {
 		return nil
 	}

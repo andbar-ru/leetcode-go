@@ -32,9 +32,9 @@ func TestInvertBinaryTree(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		tree := slice2Tree(test.root)
+		tree := slice2tree(test.root)
 		result := invertBinaryTree(tree)
-		resultSlice := tree2Slice(result)
+		resultSlice := tree2slice(result)
 		if resultSlice == nil {
 			resultSlice = []*Int{}
 		}
@@ -60,9 +60,9 @@ func TestInvertBinaryTreeRand(t *testing.T) {
 		}
 		slicedTree := mapSlice(nums, f)
 
-		tree := slice2Tree(slicedTree)
+		tree := slice2tree(slicedTree)
 		invertedTree := invertBinaryTree(tree)
-		invertedTreeSlice := tree2Slice(invertedTree)
+		invertedTreeSlice := tree2slice(invertedTree)
 		if invertedTreeSlice == nil {
 			invertedTreeSlice = []*Int{}
 		}

@@ -5,8 +5,8 @@ import (
 )
 
 func TestLowestCommonAncestorOfABinarySearchTree(t *testing.T) {
-	bigTree := slice2Tree([]*Int{{6}, {2}, {8}, {0}, {4}, {7}, {9}, nil, nil, {3}, {5}})
-	smallTree := slice2Tree([]*Int{{2}, {1}})
+	bigTree := slice2tree([]*Int{{6}, {2}, {8}, {0}, {4}, {7}, {9}, nil, nil, {3}, {5}})
+	smallTree := slice2tree([]*Int{{2}, {1}})
 
 	var tests = []struct {
 		root *TreeNode

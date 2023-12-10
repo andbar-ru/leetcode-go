@@ -10,15 +10,15 @@ func TestBalancedBinaryTree(t *testing.T) {
 		want bool
 	}{
 		{
-			root: slice2Tree([]*Int{{3}, {9}, {20}, nil, nil, {15}, {7}}),
+			root: slice2tree([]*Int{{3}, {9}, {20}, nil, nil, {15}, {7}}),
 			want: true,
 		},
 		{
-			root: slice2Tree([]*Int{{1}, {2}, {2}, {3}, {3}, nil, nil, {4}, {4}}),
+			root: slice2tree([]*Int{{1}, {2}, {2}, {3}, {3}, nil, nil, {4}, {4}}),
 			want: false,
 		},
 		{
-			root: slice2Tree([]*Int{}),
+			root: slice2tree([]*Int{}),
 			want: true,
 		},
 	}
