@@ -61,7 +61,6 @@ func maximumDepthOfBinaryTreeTopRatedIterative(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}
-
 	queue := list.New()
 	queue.PushBack(root)
 	level := 0
