@@ -96,7 +96,7 @@ func TestInsertInterval(t *testing.T) {
 
 	for _, c := range cases {
 		origIntervals := fmt.Sprint(c.intervals)
-		result := insertIntervalTopRated(c.intervals, c.newInterval)
+		result := insertInterval(c.intervals, c.newInterval)
 		if !reflect.DeepEqual(result, c.want) {
 			t.Errorf("insertInterval(%s, %v) = %v, want %v", origIntervals, c.newInterval, result, c.want)
 		}
